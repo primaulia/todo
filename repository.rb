@@ -2,6 +2,8 @@
 # and control all tasks
 
 class Repository
+  attr_reader :tasks
+
   def initialize
     # PROP / STATE?
     @tasks = [] # collection of *Task*

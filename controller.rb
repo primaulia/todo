@@ -25,24 +25,25 @@ class Controller
     @repository.add(new_task)
   end
 
+  def list_tasks
+    # 1. get the repos @tasks array
+    all_tasks = @repository.tasks
 
+    # 2. pass the array to the view
+    @view.print_all_tasks(all_tasks)
+  end
 
+  def complete_a_task
+    # 1. ask the users which one of the tasks
+    task_index = @view.choose_one # get the index of a task
 
+    # 2. get the *Task* from the repo by the index
+    completed_task = @repository.tasks[task_index]
 
-
-
-
-
-
-
-
-
-
-  def mark_as_completed
+    # 3. change the *Task* change completed to true
+    completed_task.completed = true
   end
 
   def delete_task
   end
-
-
 end
